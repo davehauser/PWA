@@ -1,3 +1,5 @@
 self.addEventListener('fetch', function(event) {
-  console.log('Resource requested is: ', event.request.url);
+  if(/\.jpg$/.test(event.request.url)) {
+    event.respondWith(fetch('images/unicorn.jpg'));
+  }
 });
